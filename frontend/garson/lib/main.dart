@@ -1,59 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'constants/colors.dart';
-import 'screens/welcome_screen.dart';
-import 'dart:io';
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:flutter/services.dart';
+import 'core/theme/app_theme.dart';
+import 'core/router/app_router.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
-    await Firebase.initializeApp();
-  }
+  
+  // Durum çubuğunu transparan yap
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      systemNavigationBarColor: Colors.black,
+      systemNavigationBarIconBrightness: Brightness.light,
+    ),
+  );
+  
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return MaterialApp.router(
       title: 'Garson',
-      theme: ThemeData(
-        colorScheme: ColorScheme.dark(
-          primary: AppColors.primary,
-          secondary: AppColors.secondary,
-          background: AppColors.background,
-          error: AppColors.error,
-          surface: AppColors.surface,
-        ),
-        scaffoldBackgroundColor: AppColors.background,
-        appBarTheme: const AppBarTheme(
-          color: Colors.transparent,
-          elevation: 0,
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: AppColors.textFieldBackground,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: AppColors.inputBorder),
-          ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.primary,
-            foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 16),
-          ),
-        ),
-      ),
-      home: const WelcomeScreen(),
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.darkTheme,
+      routerConfig: AppRouter.router,
     );
   }
 }

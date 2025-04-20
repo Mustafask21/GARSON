@@ -1,22 +1,6 @@
-# Garson Uygulaması
+# garson
 
-Bu uygulama, garson ve işletmelerin kaydolup giriş yapabilmesini sağlayan bir Flutter uygulamasıdır.
-
-## Firebase Yapılandırması
-
-Uygulamayı çalıştırmadan önce Firebase yapılandırmasını tamamlamanız gerekmektedir:
-
-1. [Firebase Console](https://console.firebase.google.com)'a giriş yapın
-2. Yeni bir proje oluşturun
-3. Projede Authentication ve Firestore Database hizmetlerini etkinleştirin
-4. Authentication'da e-posta/şifre giriş yöntemini etkinleştirin
-5. Firestore'da bir veritabanı oluşturun ve güvenlik kurallarını yapılandırın
-6. Android uygulamanızı Firebase'e kaydedin
-7. İndirdiğiniz `google-services.json` dosyasını `android/app/` klasörüne yerleştirin
-
-## Diğer Ayarlar
-
-- Uygulama logosu için `assets/logo.png` dosyasını ekleyin veya mevcut kodu güncelleyin.
+A new Flutter project.
 
 ## Getting Started
 
