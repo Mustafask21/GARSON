@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "807122381494",
+    "project_id": "garsonapp-1d821",
+    "storage_bucket": "garsonapp-1d821.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807122381494:android:17b90852482d50cd769417",
+        "android_client_info": {
+          "package_name": "com.codedeleter.garson"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW8RoYAxDYzF6demjeV5UIeF8wm5HZELA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807122381494:android:c541ee974ba3b90b769417",
+        "android_client_info": {
+          "package_name": "com.garsonapp.garsonapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCW8RoYAxDYzF6demjeV5UIeF8wm5HZELA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
