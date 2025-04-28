@@ -7,6 +7,8 @@ import '../constants/app_colors.dart';
 import '../constants/app_text_styles.dart';
 import '../services/auth_service.dart';
 import 'role_selection_screen.dart';
+import 'waiter_home_screen.dart';
+import 'business_dashboard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -59,26 +61,33 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  void _login() {
+  void _login() async {
     if (_formKey.currentState!.validate()) {
-      // Giriş işlemleri burada yapılacak
+      // İşletme hesabı kontrolü
+      if (_emailController.text == 'isletme@gmail.com' && 
+          _passwordController.text == 'isletmehesabı') {
+        // İşletme hesabına özel yönlendirme
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const BusinessDashboard(),
+          ),
+        );
+        return; // İşlemi burada sonlandır
+      }
       
-      // pushReplacement yerine push kullanarak önceki ekranı koruyoruz
-      // böylece geri dön butonu çalışacak
-      Navigator.of(context).push(
+      // Normal kullanıcı girişi
+      await login();
+      // Başarılı giriş sonrası garson ana sayfasına yönlendirme
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const RoleSelectionScreen(),
+          builder: (context) => const WaiterHomeScreen(),
         ),
       );
     }
   }
 
   void _register() {
-    // Kayıt sayfasına yönlendirme
-    // Şimdilik aynı rol seçim sayfasına gider
-    
-    // pushReplacement yerine push kullanarak önceki ekranı koruyoruz
-    // böylece geri dön butonu çalışacak
+    // Form validasyonunu atlayıp direkt olarak rol seçim sayfasına yönlendiriyoruz
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const RoleSelectionScreen(),
