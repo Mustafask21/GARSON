@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'notifications_screen.dart';
 import '../widgets/footer_widget.dart';
-import '../widgets/sidebar_widget.dart';
+import '../widgets/app_drawer.dart';
 
 class BusinessDashboard extends StatefulWidget {
   const BusinessDashboard({Key? key}) : super(key: key);
@@ -46,12 +46,7 @@ class _BusinessDashboardState extends State<BusinessDashboard> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: const Color(0xFF161A30),
-      drawer: const SidebarWidget(
-        userName: "İşletme Yöneticisi",
-        userEmail: "isletme@gmail.com",
-        userAvatar: "https://randomuser.me/api/portraits/men/85.jpg",
-        isBusinessAccount: true,
-      ),
+      drawer: const AppDrawer(),
       appBar: AppBar(
         backgroundColor: const Color(0xFF161A30),
         elevation: 0,

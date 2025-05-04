@@ -4,7 +4,7 @@ import '../constants/app_text_styles.dart';
 import 'account_screen.dart';
 import 'messages_screen.dart';
 import '../widgets/footer_widget.dart';
-import '../widgets/sidebar_widget.dart';
+import '../widgets/app_drawer.dart';
 
 class WaiterHomeScreen extends StatefulWidget {
   const WaiterHomeScreen({Key? key}) : super(key: key);
@@ -41,12 +41,7 @@ class _WaiterHomeScreenState extends State<WaiterHomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: const Color(0xFF161A30), // Koyu lacivert arka plan
-      drawer: const SidebarWidget(
-        userName: "Garson Kullanıcı",
-        userEmail: "garson@gmail.com",
-        userAvatar: "https://randomuser.me/api/portraits/men/32.jpg",
-        isBusinessAccount: false,
-      ),
+      drawer: const AppDrawer(),
       appBar: AppBar(
         backgroundColor: const Color(0xFF161A30),
         elevation: 0,

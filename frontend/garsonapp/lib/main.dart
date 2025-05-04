@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/splash_screen.dart';
 import 'screens/role_selection_screen.dart';
+import 'screens/about_screen.dart';
+import 'screens/contact_screen.dart';
+import 'screens/chat_screen.dart';
 import 'utils/app_theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+
 void main () async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -38,6 +42,14 @@ class MyApp extends StatelessWidget {
       title: 'Garson App',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
+      routes: {
+        '/about': (context) => const AboutScreen(),
+        '/contact': (context) => const ContactScreen(),
+        '/chat': (context) => const ChatScreen(
+          businessName: 'Demo İşletme',
+          businessAvatar: 'https://via.placeholder.com/150',
+        ),
+      },
       // Uygulama akışı: Splash -> Login -> Role Selection
       home: const SplashScreen(),
     );
