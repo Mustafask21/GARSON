@@ -1,0 +1,6 @@
+android {
+    defaultConfig {
+        minSdkVersion 23
+    }
+    ndkVersion = "27.0.12077973"
+} 
