@@ -1,0 +1,2 @@
+Bu dosya, assets/images klasörünün Flutter tarafından tanınması için yer tutucu olarak kullanılmaktadır.
+Daha sonra gerçek görseller ile değiştirilebilir. 
